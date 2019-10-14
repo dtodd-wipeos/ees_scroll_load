@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 {
     'name': 'EESTISOFT scroll loading',
     'author': 'EESTISOFT, Hideki Yamamoto',
@@ -22,7 +23,7 @@
 
     'depends': ['web'],
     'installable': True,
-    'application': False,
+    'application': True,
     'auto_install': False,
 
     'images': [
