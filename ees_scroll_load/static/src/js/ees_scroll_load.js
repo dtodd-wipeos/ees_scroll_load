@@ -158,6 +158,8 @@ ees.scroll_load = {
 			}
 		}
 	},
+	// Triggered by scroll event from one to three elements (only one should succeed)
+	// Loads in the next 80 (or remaining if less than 80) records that match the context
 	loadmore: function(listrenderer) {
 		// Only if the view is not currently loading
 		if (!ees.scroll_load.loading) {
@@ -203,7 +205,7 @@ ees.scroll_load = {
 				() => {
 					// When done loading records, make this function available to be used again
 					ees.scroll_load.loading = false;
-				},500 // After half a second has passed
+				}, 500 // After half a second has passed
 			);
 		}
 	},
