@@ -59,7 +59,7 @@ ees.scroll_load = {
 						doit = false;
 					}
 				}
-				if (doit) {
+				if (doit && x.value !== undefined) {
 					// Create a new range from start to existing end (why not use `intval` here?)
 					x.value = '1-' + linkelm.firstChild.innerHTML;
 				}
