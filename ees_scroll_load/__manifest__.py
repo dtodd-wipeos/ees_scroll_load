@@ -1,33 +1,37 @@
 {
-    'name': 'EESTISOFT scroll load',
-    'version': '12.0.1.0',
-    'author': 'EESTISOFT,''Hideki Yamamoto',
-    'category': 'Productivity',
+    'name': 'EESTISOFT scroll loading',
+    'author': 'EESTISOFT, Hideki Yamamoto',
     'website': 'http://www.eestisoft.com',
-    'sequence': 2,
-    'summary': 'Adds loading of new records for kanban and tree views in a select view',
-    'description': """
 
-Automatic load more record on scroll in any select (search) views
-============
-Adds loading of new records for kanban and tree views in a select view.
+    'summary': 'Adds loading of new records for kanban and tree views',
 
-Steps:
-1-Install module
-2-Restart odoo service - this is important for somewhat reason.
-3-Clear browser cache and goto any odoo page with a search view and more than 80 results
-4-Scroll down and notice loading of new records.
+    'description': "Automatically load more records on scroll in any search view"
+                   "============================================================"
+                   "Adds loading of new records for kanban and tree views"
+                   ""
+                   "Usage:"
+                   "1 - Install module"
+                   "2 - Restart odoo service - this is important for some reason"
+                   "3 - Clear browser cache and go to any odoo page with a search view and more than 80 results"
+                   "4 - Scroll down and notice loading of new records"
+                   ""
+                   "Made with love.",
 
-Made with love.
+    'version': '12.0.1.0',
+    'category': 'Productivity',
 
-    """,
-	'images':['static/description/thumb.png'],
     'depends': ['web'],
-    'data': [
-		'views/ees_scroll_load.xml',
-    ],	
-    'qweb': ['static/src/xml/ees_scroll_load.xml'],
     'installable': True,
-    'application': True,
-    'auto_install': False
+    'application': False,
+    'auto_install': False,
+
+    'images': [
+        'static/description/thumb.png',
+    ],
+    'data': [
+        'views/ees_scroll_load.xml',
+    ],
+    'qweb': [
+        'static/src/xml/ees_scroll_load.xml',
+    ],
 }
