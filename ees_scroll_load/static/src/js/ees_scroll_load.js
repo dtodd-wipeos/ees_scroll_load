@@ -16,14 +16,25 @@ odoo.define('ees_scroll_load.overloads', function(require) {
 		_updatePager: function() {
 			// Execute base class + inherited others before this
 			this._super();
-			var view = this;
-			setTimeout(
-				// Fancy ES6 Anonymous function
-				() => {
-					// Scroll Spy the pager
-					ees.scroll_load.setupscroll(view);
-				}, 500 // After half of a second has passed
-			);
+
+			// Determine if the user preference has been set
+			// This is an async function, so we want to infinite scroll or not when this finishes
+			this._rpc({
+				model: 'res.users',
+				method: 'has_infinite_scrolling',
+				args: [false]
+			}).then(function(result){
+				if (result) {
+					var view = this;
+					setTimeout(
+						// Fancy ES6 Anonymous function
+						() => {
+							// Scroll Spy the pager
+							ees.scroll_load.setupscroll(view);
+						}, 500 // After half of a second has passed
+					);
+				}
+			})
 		},
 	});
 });
