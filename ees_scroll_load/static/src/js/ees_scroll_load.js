@@ -16,6 +16,7 @@ odoo.define('ees_scroll_load.overloads', function(require) {
 		_updatePager: function() {
 			// Execute base class + inherited others before this
 			this._super();
+			var view = this;
 
 			// Determine if the user preference has been set
 			// This is an async function, so we want to infinite scroll or not when this finishes
@@ -25,7 +26,6 @@ odoo.define('ees_scroll_load.overloads', function(require) {
 				args: [false]
 			}).then(function(result){
 				if (result) {
-					var view = this;
 					setTimeout(
 						// Fancy ES6 Anonymous function
 						() => {
