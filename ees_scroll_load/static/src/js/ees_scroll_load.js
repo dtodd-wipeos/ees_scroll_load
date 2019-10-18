@@ -23,7 +23,7 @@ odoo.define('ees_scroll_load.overloads', function(require) {
 			this._rpc({
 				model: 'res.users',
 				method: 'has_boolean_enabled',
-				args: ['infinite_scroll'],
+				args: ['toggle_infinite_scrolling'],
 			}).then(function(result){
 				if (result) {
 					setTimeout(
