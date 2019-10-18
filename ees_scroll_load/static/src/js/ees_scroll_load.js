@@ -22,8 +22,8 @@ odoo.define('ees_scroll_load.overloads', function(require) {
 			// This is an async function, so we want to infinite scroll or not when this finishes
 			this._rpc({
 				model: 'res.users',
-				method: 'has_infinite_scrolling',
-				args: [false]
+				method: 'has_boolean_enabled',
+				args: ['infinite_scroll'],
 			}).then(function(result){
 				if (result) {
 					setTimeout(
